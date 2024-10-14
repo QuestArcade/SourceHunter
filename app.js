@@ -399,7 +399,7 @@ async function loadQuestions() {
                     </form>
                 </div>
             `;
-            cardsContainer.appendChild(card);
+            cardsContainer.prepend(card);
         });
 
     } catch (error) {

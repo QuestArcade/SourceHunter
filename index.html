@@ -20,8 +20,82 @@
 
     <title>Source Hunter</title>
     <link rel="stylesheet" href="design.css">
+    <style>
+        .fixed-links {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .fixed-links a {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .info-page {
+            background-color: #333;
+            color: white;
+        }
+
+        .info-page:hover {
+            background-color: #000;
+        }
+
+        .tron-dao {
+            background-color: #a5002b; 
+            color: white;
+        }
+
+        .tron-dao:hover {
+            background-color: #71001e;
+        }
+
+        .devpost {
+            background-color: #003d52;
+            color: white;
+        }
+
+        .devpost:hover {
+            background-color: #002531;
+        }
+
+        .fixed-links img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .fixed-links {
+                display: none;
+            }
+        }
+
+    </style>
 </head>
 <body>
+    <div class="fixed-links">
+        <a href="./info/index.html" target="_blank" class="info-page">
+            <img src="./logo-black.png" alt="Info Page Logo"> Info: Source Hunter
+        </a>
+        <a href="https://forum.trondao.org/t/source-hunter-uncover-the-origins-fueled-by-curiosity/27990" target="_blank" class="tron-dao">
+            <img src="./tron-dao-forum.png" alt="Tron DAO Forum Logo"> Tron DAO Forum
+        </a>
+        <a href="https://devpost.com/software/source-hunter" target="_blank" class="devpost">
+            <img src="./devpost.png" alt="DevPost Logo"> DevPost
+        </a>
+    </div>
+
     <header>
         <img src="sourcehunter.png" alt="Source Hunter Logo" style="width: 150px; display: block; margin: 20px auto;">
         <h1>Source Hunter</h1>
@@ -51,7 +125,6 @@
         <h2>Forum</h2>
         <div id="cards-container"></div>
     </div>
-    
 
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.min.js"></script>
